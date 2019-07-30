@@ -6,7 +6,7 @@ But you need learn now, let's go.
 
 For search the perfect number of clusters, the Elbow method was used. Read more <a href="https://www.datanovia.com/en/lessons/determining-the-optimal-number-of-clusters-3-must-know-methods/">here</a>.
 
-Fist, install <a href="https://www.python.org/downloads/">Python</a>.
+First, install <a href="https://www.python.org/downloads/">Python</a>.
 
 Second, install <a href="https://pandas.pydata.org/">Pandas</a>, <a href="https://numpy.org/">Numpy</a>, <a href="https://matplotlib.org/">Matplotlib</a> and <a href="http://scikit-learn.org/stable/install.html">Sklearn</a>.
 
