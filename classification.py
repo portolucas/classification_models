@@ -23,6 +23,20 @@ scaler = MinMaxScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
+# Find of perfect K (number of clusters)
+
+k_range = range(1, 20)
+scores = []
+for k in k_range:
+      knn = KNeighborsClassifier(n_neighbors = k)
+      knn.fit(X_train, y_train)
+      scores.append(knn.score(X_test, y_test))
+plt.figure()
+plt.xlabel('k')
+plt.ylabel('accuracy')
+plt.scatter(k_range, scores)
+plt.xticks([0,5,10,15,20])
+
 # ** -- Build Models of Classifier -- **
 
 # k-NN Classifier
@@ -77,20 +91,6 @@ print('Acuracy of Logistic regression classifier on training set: {:.2f}'
 print('Acuracy of Logistic regression classifier on set test: {:.2f}'
       .format(logreg.score(X_test, y_test)))
 
-
-# Find of perfect K (number of clusters)
-
-k_range = range(1, 20)
-scores = []
-for k in k_range:
-      knn = KNeighborsClassifier(n_neighbors = k)
-      knn.fit(X_train, y_train)
-      scores.append(knn.score(X_test, y_test))
-plt.figure()
-plt.xlabel('k')
-plt.ylabel('accuracy')
-plt.scatter(k_range, scores)
-plt.xticks([0,5,10,15,20])
 
 # Plot the Decision Boundary of the k-NN Classifier
 
